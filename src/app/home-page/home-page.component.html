@@ -1,0 +1,83 @@
+<div class="container">
+  <h1>Add Product Details</h1>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="product-details-input">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Product Id</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-sm"
+                 disabled
+                 #productId value="{{productIdVal}}"
+          >
+        </div>
+
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Product Name</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-sm"
+                 #productName value="{{productNameVal}}">
+        </div>
+
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">No Of Units Per Carton</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-sm"
+                 #unitsPerCarton value="{{unitsPerCartonVal}}">
+        </div>
+
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Price Of Carton</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-sm"
+                 #priceOfCarton value="{{priceOfCartonVal}}">
+        </div>
+        <div class="add-btn-right-home">
+          <button type="button" class="btn btn-primary"
+                  (click)="addProduct(productId.value,productName.value,unitsPerCarton.value,priceOfCarton.value)">add
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-12" *ngIf="products[0]">
+      <table class="table table-hover table-dark">
+        <thead>
+        <tr>
+          <th scope="col">productId</th>
+          <th scope="col">productName</th>
+          <th scope="col">noOfUnitsPerCarton</th>
+          <th scope="col">priceOfCarton</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let product of products">
+          <th scope="row">{{product.productId}}</th>
+          <td>{{product.productName}}</td>
+          <td>{{product.noOfUnitsPerCarton}}</td>
+          <td>{{product.priceOfCarton}}</td>
+          <td>
+            <button type="button" class="btn btn-danger"
+                    (click)="removeProduct(product.productId)">remove
+            </button>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,19 @@
+.header-top {
+  background-color: sandybrown;
+  padding: 1%;
+}
+
+.header-top-text {
+  padding-left: 70px;
+  color: white;
+
+}
+
+.header-top-text h1, h4 {
+  display: inline-block !important;
+}
+
+.header-top-text:hover {
+  cursor: pointer;
+  color: black;
+}
