@@ -48,7 +48,7 @@ export class PriceCalculatorComponent implements OnInit {
         this.calculatedPrice = response.body;
       });
     } else {
-      alert('please select options');
+      alert('please select options now');
     }
 
 
