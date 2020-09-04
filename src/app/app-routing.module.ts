@@ -1,16 +1,18 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {HomePageComponent} from './home-page/home-page.component';
-import {PriceTableComponent} from './body/price-table/price-table.component';
-import {PriceCalculatorComponent} from './body/price-calculator/price-calculator.component';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
+import {CategoryComponent} from './component/category/category.component';
+import {ImageComponent} from './component/image/image.component';
+import {ProductComponent} from './component/product/product.component';
+import {HomePageComponent} from './component/home-page/home-page.component';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {path: '', component: HomePageComponent},
-  {path: 'price-table', component: PriceTableComponent},
-  {path: 'price-calculator', component: PriceCalculatorComponent},
-  {path: '**', component: HomePageComponent}
+  {path: 'category', component: CategoryComponent},
+  {path: 'image', component: ImageComponent},
+  {path: 'product', component: ProductComponent},
 
 ];
 
@@ -18,7 +20,8 @@ const routes: Routes = [
   imports: [
     RouterModule.forRoot(routes),
     CommonModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   exports: [RouterModule]
 })

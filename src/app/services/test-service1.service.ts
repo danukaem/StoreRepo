@@ -28,6 +28,6 @@ export class TestService1Service {
   }
 
   deleteStudent(kasun, age) {
-    this.studentsList.pop({name: name, age: age});
+    // this.studentsList.pop({name: name, age: age});
   }
 }

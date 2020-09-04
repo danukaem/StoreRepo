@@ -1,8 +1,8 @@
 export class Product {
   public productId;
   public productName;
-  public noOfUnitsPerCarton;
-  public priceOfCarton;
+  public productDescription;
+  public categories;
 
   constructor() {
   }

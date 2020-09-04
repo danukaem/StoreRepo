@@ -3,22 +3,25 @@ import {NgModule} from '@angular/core';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {HeaderComponent} from './header/header.component';
-import {BodyComponent} from './body/body.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
-import { PriceTableComponent } from './body/price-table/price-table.component';
-import { PriceCalculatorComponent } from './body/price-calculator/price-calculator.component';
-import { HomePageComponent } from './home-page/home-page.component';
+import {TestService1Service} from './services/test-service1.service';
+import {CategoryComponent} from './component/category/category.component';
+import {ImageComponent} from './component/image/image.component';
+import {ProductComponent} from './component/product/product.component';
+import {HeaderComponent} from './component/header/header.component';
+import {BodyComponent} from './component/body/body.component';
+import {HomePageComponent} from './component/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     BodyComponent,
-    PriceTableComponent,
-    PriceCalculatorComponent,
-    HomePageComponent
+    HomePageComponent,
+    CategoryComponent,
+    ImageComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +29,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     HttpClientModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [TestService1Service],
   bootstrap: [AppComponent]
 })
 export class AppModule {
