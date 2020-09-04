@@ -12,7 +12,7 @@
           <input type="text" class="form-control" aria-label="Sizing example input"
                  aria-describedby="inputGroup-sizing-sm"
                  disabled
-                 #productId value="{{productIdVal}}"
+                 #productId  [(ngModel)]="productIdVal"
           >
         </div>
 
@@ -25,26 +25,35 @@
                  #productName value="{{productNameVal}}">
         </div>
 
+
         <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text">No Of Units Per Carton</span>
+            <span class="input-group-text">Product Description</span>
           </div>
           <input type="text" class="form-control" aria-label="Sizing example input"
                  aria-describedby="inputGroup-sizing-sm"
-                 #unitsPerCarton value="{{unitsPerCartonVal}}">
+                 #productDescription value="{{productDescriptionVal}}">
         </div>
 
         <div class="input-group input-group-sm mb-3">
           <div class="input-group-prepend">
-            <span class="input-group-text">Price Of Carton</span>
+            <span class="input-group-text">Product Category</span>
           </div>
-          <input type="text" class="form-control" aria-label="Sizing example input"
-                 aria-describedby="inputGroup-sizing-sm"
-                 #priceOfCarton value="{{priceOfCartonVal}}">
+          <div>
+            <select #categoryId [ngModel]="categoryId" class="dropdown form-control" (change)="addCategoryToList(categoryId.value)">
+              <!--<option value="0" class="dropdown-item">- select Category -</option>-->
+              <option class="dropdown-item" *ngFor="let category of categories"
+                      value="{{category.categoryId}}"  >{{category.categoryName }} -- {{category.categoryId}}</option>
+
+            </select>
+          </div>
+          <!--<input type="text" class="form-control" aria-label="Sizing example input"-->
+                 <!--aria-describedby="inputGroup-sizing-sm"-->
+                 <!--#productCategories value="{{productCategoriesVal}}">-->
         </div>
         <div class="add-btn-right-home">
           <button type="button" class="btn btn-primary"
-                  (click)="addProduct(productId.value,productName.value,unitsPerCarton.value,priceOfCarton.value)">add
+                  (click)="addProduct(productId.value,productName.value,productDescription.value )">add
           </button>
         </div>
 
@@ -56,16 +65,14 @@
         <tr>
           <th scope="col">productId</th>
           <th scope="col">productName</th>
-          <th scope="col">noOfUnitsPerCarton</th>
-          <th scope="col">priceOfCarton</th>
+          <th scope="col">productDescription</th>
         </tr>
         </thead>
         <tbody>
         <tr *ngFor="let product of products">
-          <th scope="row">{{product.productId}}</th>
+          <td scope="row">{{product.productId}}</td>
           <td>{{product.productName}}</td>
-          <td>{{product.noOfUnitsPerCarton}}</td>
-          <td>{{product.priceOfCarton}}</td>
+          <td>{{product.productDescription}}</td>
           <td>
             <button type="button" class="btn btn-danger"
                     (click)="removeProduct(product.productId)">remove

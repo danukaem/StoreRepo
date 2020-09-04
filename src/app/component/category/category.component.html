@@ -1,0 +1,73 @@
+<div class="container">
+  <h1>Add Category Details</h1>
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="category-details-input">
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Category Id</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-sm"
+                 disabled
+                 #categoryId [ngModel]="categoryIdVal"
+          >
+        </div>
+
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Category Name</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-sm"
+                 #categoryName value="{{categoryNameVal}}">
+        </div>
+
+
+        <div class="input-group input-group-sm mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Category Description</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Sizing example input"
+                 aria-describedby="inputGroup-sizing-sm"
+                 #categoryDescription value="{{categoryDescriptionVal}}">
+        </div>
+        <div class="add-btn-right-home">
+          <button type="button" class="btn btn-primary"
+                  (click)="addCategory(categoryId.value,categoryName.value,categoryDescription.value )">add
+          </button>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-12" *ngIf="categories[0]">
+      <table class="table table-hover table-dark">
+        <thead>
+        <tr>
+          <th scope="col">categoryId</th>
+          <th scope="col">categoryName</th>
+          <th scope="col">categoryDescription</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let category of categories">
+          <td scope="row">{{category.categoryId}}</td>
+          <td>{{category.categoryName}}</td>
+          <td>{{category.categoryDescription}}</td>
+          <td>
+            <button type="button" class="btn btn-danger"
+                    (click)="removeCategory(category.categoryId)">remove
+            </button>
+          </td>
+        </tr>
+
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>
+
+
