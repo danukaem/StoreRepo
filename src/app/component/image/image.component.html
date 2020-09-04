@@ -1,72 +1,72 @@
-<div class="container">
-  <h1>Add Image Details</h1>
+<!--<div class="container">-->
+  <!--<h1>Add Image Details</h1>-->
 
-  <div class="row">
-    <div class="col-md-12">
+  <!--<div class="row">-->
+    <!--<div class="col-md-12">-->
 
-      <div class="product-details-input">
-        <div class="input-group input-group-sm mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Image Id</span>
-          </div>
-          <input type="text" class="form-control" aria-label="Sizing example input"
-                 aria-describedby="inputGroup-sizing-sm"
-                 #imageId value="{{imageIdVal}}"
-          >
-        </div>
+      <!--<div class="product-details-input">-->
+        <!--<div class="input-group input-group-sm mb-3">-->
+          <!--<div class="input-group-prepend">-->
+            <!--<span class="input-group-text">Image Id</span>-->
+          <!--</div>-->
+          <!--<input type="text" class="form-control" aria-label="Sizing example input"-->
+                 <!--aria-describedby="inputGroup-sizing-sm"-->
+                 <!--#imageId value="{{imageIdVal}}"-->
+          <!--&gt;-->
+        <!--</div>-->
 
-        <div class="input-group input-group-sm mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Image Name</span>
-          </div>
-          <input type="text" class="form-control" aria-label="Sizing example input"
-                 aria-describedby="inputGroup-sizing-sm"
-                 #imageName value="{{imageNameVal}}">
-        </div>
+        <!--<div class="input-group input-group-sm mb-3">-->
+          <!--<div class="input-group-prepend">-->
+            <!--<span class="input-group-text">Image Name</span>-->
+          <!--</div>-->
+          <!--<input type="text" class="form-control" aria-label="Sizing example input"-->
+                 <!--aria-describedby="inputGroup-sizing-sm"-->
+                 <!--#imageName value="{{imageNameVal}}">-->
+        <!--</div>-->
 
 
-        <div class="input-group input-group-sm mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text">Image Description</span>
-          </div>
-          <input type="text" class="form-control" aria-label="Sizing example input"
-                 aria-describedby="inputGroup-sizing-sm"
-                 #imageDescription value="{{imageDescription}}">
-        </div>
-        <div class="add-btn-right-home">
-          <button type="button" class="btn btn-primary"
-                  (click)="addProduct(imageId.value,imageName.value,imageDescription.value )">add
-          </button>
-        </div>
+        <!--<div class="input-group input-group-sm mb-3">-->
+          <!--<div class="input-group-prepend">-->
+            <!--<span class="input-group-text">Image Description</span>-->
+          <!--</div>-->
+          <!--<input type="text" class="form-control" aria-label="Sizing example input"-->
+                 <!--aria-describedby="inputGroup-sizing-sm"-->
+                 <!--#imageDescription value="{{imageDescription}}">-->
+        <!--</div>-->
+        <!--<div class="add-btn-right-home">-->
+          <!--<button type="button" class="btn btn-primary"-->
+                  <!--(click)="addProduct(imageId.value,imageName.value,imageDescription.value )">add-->
+          <!--</button>-->
+        <!--</div>-->
 
-      </div>
-    </div>
-    <div class="col-md-12" *ngIf="images[0]">
-      <table class="table table-hover table-dark">
-        <thead>
-        <tr>
-          <th scope="col">imageId</th>
-          <th scope="col">imageName</th>
-          <th scope="col">imageDescription</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let image of images">
-          <td scope="row">{{image.imageId}}</td>
-          <td>{{image.imageName}}</td>
-          <td>{{image.imageDescription}}</td>
-          <td>
-            <button type="button" class="btn btn-danger"
-                    (click)="removeImage(image.productId)">remove
-            </button>
-          </td>
-        </tr>
+      <!--</div>-->
+    <!--</div>-->
+    <!--<div class="col-md-12" *ngIf="images[0]">-->
+      <!--<table class="table table-hover table-dark">-->
+        <!--<thead>-->
+        <!--<tr>-->
+          <!--<th scope="col">imageId</th>-->
+          <!--<th scope="col">imageName</th>-->
+          <!--<th scope="col">imageDescription</th>-->
+        <!--</tr>-->
+        <!--</thead>-->
+        <!--<tbody>-->
+        <!--<tr *ngFor="let image of images">-->
+          <!--<td scope="row">{{image.imageId}}</td>-->
+          <!--<td>{{image.imageName}}</td>-->
+          <!--<td>{{image.imageDescription}}</td>-->
+          <!--<td>-->
+            <!--<button type="button" class="btn btn-danger"-->
+                    <!--(click)="removeImage(image.productId)">remove-->
+            <!--</button>-->
+          <!--</td>-->
+        <!--</tr>-->
 
-        </tbody>
-      </table>
+        <!--</tbody>-->
+      <!--</table>-->
 
-    </div>
-  </div>
-</div>
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
 
 

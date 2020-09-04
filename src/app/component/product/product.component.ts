@@ -48,7 +48,7 @@ export class ProductComponent implements OnInit {
 
   }
 
-  addProduct(productId, productName, productDescription, categories) {
+  addProduct(productId, productName, productDescription) {
     const headers = new HttpHeaders({Authorization: 'Basic ' + btoa('user' + ':' + 'password')});
     const product = {
       productId,
